@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      EWSLT 2026 | Evaluation Workshop on Speech and Language Technologies |
+      LTRC | IIIT-H
+    </title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- Typography & Base --- */
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .navbar-brand {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+      }
+
+      /* --- Navbar Styles --- */
+      .navbar {
+        transition: all 0.3s ease-in-out;
+        padding: 15px 0;
+      }
+
+      .navbar-transparent {
+        background-color: transparent !important;
+      }
+
+      .navbar-scrolled {
+        background-color: #0c2340 !important; /* Deep academic blue */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+      }
+
+      .navbar-dark .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
+        margin: 0 5px;
+        transition: color 0.2s;
+      }
+
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: #f8c104; /* Accent color on hover */
+      }
+      /* --- Hero Section (ACL/Interspeech Banner Style) --- */
+      .hero {
+        background: linear-gradient(
+            rgba(12, 35, 64, 0.7),
+            rgba(12, 35, 64, 0.7)
+          ),
+          url("hyderabad.jpg") no-repeat center center/cover;
+        min-height: 40vh; /* Takes up 40% of screen height */
+        display: flex;
+        align-items: center;
+        color: white;
+        padding-top: 80px; /* Offset for the sticky navbar */
+        padding-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+      }
+
+      .hero h3 {
+        font-weight: 400;
+        font-size: 2.15rem;
+        margin-bottom: 1.5rem;
+        color: #e0e0e0;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .hero-meta p {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+      }
+
+      /* --- Section Styling --- */
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .bg-light-gray {
+        background-color: #f8f9fa;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        color: #0c2340;
+        padding-bottom: 15px;
+      }
+
+      /* Underline effect for section titles */
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 3px;
+        background: #f8c104;
+      }
+
+      .text-center .section-title h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* --- Academic Elements --- */
+      .date-table th {
+        color: #0c2340;
+        font-weight: 600;
+        width: 60%;
+      }
+
+      .topic-list li,
+      .task-list li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .topic-list li::before,
+      .task-list li::before {
+        content: "\F26A"; /* Bootstrap icon: check-circle-fill */
+        font-family: "bootstrap-icons";
+        position: absolute;
+        left: 0;
+        color: #0c2340;
+        font-size: 1.1rem;
+      }
+      /* --- Section Styling --- */
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .bg-light-gray {
+        background-color: #f8f9fa;
+      }
+
+      .section-title {
+        /* Removed position: relative from here */
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        color: #0c2340;
+        padding-bottom: 15px;
+        position: relative; /* Moved here so the underline anchors to the text */
+        display: inline-block; /* Ensures the container is only as wide as the text */
+      }
+
+      /* Underline effect for section titles */
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 3px;
+        background: #f8c104;
+      }
+
+      /* Centers the underline for centered sections */
+      .text-center .section-title h2::after,
+      .section-title.text-center h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* --- Footer --- */
+      footer {
+        background: #0c2340;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+      .text-ewslt{
+        color: #f8c104;
+      }
+    </style>
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar-main"
+    data-bs-root-margin="0px 0px -40%"
+    data-bs-smooth-scroll="true"
+    tabindex="0"
+  >
+    <nav
+      id="navbar-main"
+      class="navbar navbar-expand-lg fixed-top navbar-dark navbar-transparent"
+    >
+      <div class="container">
+        <a class="navbar-brand text-white" href="#">EWSLT 2026</a>
+        <button
+          class="navbar-toggler shadow-none border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dates">Important Dates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cfp">Call for Papers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tasks">Shared Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#organizers">Organizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="container">
+          <div class="col-lg-10">
+            <h1>EWSLT <span class="text-ewslt">2026</span></h1>
+            <h3>Evaluation Workshop on Speech and Language Technologies</h3>
+
+            <div class="hero-meta mt-3">
+              <p> IIIT Hyderabad, India</p>
+              <p> December 2026 (Dates
+                TBA)
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="section-title text-center">
+              <h2>Workshop Overview</h2>
+            </div>
+            <p class="mb-4">
+                Recent progress in speech and language technologies, increasingly driven by scale, with larger models, larger datasets, and more compute, has lead to impressive performance gains. However, these systems still have massive performance gaps that are glaringly obvious to human users, yet completely invisible to standard evaluation methods. As a result, evaluation has become a checklist exercise that reports incremental improvements on existing benchmarks rather than providing a meaningful assessment of what systems actually understand. This creates a growing gap between technological capability and our ability to measure, interpret, and ground that progress in principled ways.
+                </p>
+                
+                <p class="mb-4">
+                The EWSLT workshop aims to address this gap by bringing together researchers and practitioners from across the globe working on speech and language technologies onto a common platform to collectively discuss, debate, and develop innovative, effective, interpretable, and linguistically aware evaluation methodologies. This includes new standards, benchmarks, datasets, metrics, and shared challenges that encourage deeper and more reliable ways of understanding progress in speech and language technologies.
+                </p>
+                
+                <p class="mb-4">
+                The workshop will include invited talks, paper presentations, panel discussions, and shared evaluation challenges focused on addressing the most pressing bottlenecks in the evaluation of modern speech and language technologies.
+                </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dates" class="section-padding bg-light-gray">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h2>Important Dates</h2>
+            </div>
+
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-0">
+                <table class="table table-hover mb-0 date-table">
+                  <tbody>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Paper submission deadline
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        TBA
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Notification of acceptance
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        TBA
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Camera-ready submission
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        TBA
+                      </td>
+                    </tr>
+                    <tr class="table-primary">
+                      <th class="py-3 px-4 border-bottom-0 text-dark">
+                        Workshop date
+                      </th>
+                      <td
+                        class="py-3 px-4 border-bottom-0 text-end fw-bold text-dark"
+                      >
+                        December 2026
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cfp" class="section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>Call for Papers</h2>
+        </div>
+
+        <p class="mb-4 text-muted fs-5">
+          We invite submissions describing novel standards, evaluation methods, benchmarks,
+          datasets, and analysis of speech and language technologies.
+          Submissions must follow the ACL formatting guidelines. Accepted papers
+          will be presented at the workshop and included in the proceedings.
+        </p>
+
+        <h4 class="mb-4">
+          Topics of interest include (but are not limited to):
+        </h4>
+
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-unstyled topic-list">
+              <li>Evaluation of Automatic Speech Recognition (ASR)</li>
+              <li>Evaluation of Text-to-Speech (TTS)</li>
+              <li>Speech Translation evaluation</li>
+              <li>Evaluation of Speech-to-Speech systems</li>
+              <li>Speech LLM evaluation</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-unstyled topic-list">
+              <li>Evaluation metrics beyond WER</li>
+              <li>Human vs automatic evaluation methods</li>
+              <li>Low-resource and multilingual evaluation</li>
+              <li>Evaluation of expressive and prosodic speech</li>
+              <li>Bias and robustness in speech systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tasks" class="section-padding bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="section-title">
+              <h2>Shared Tasks</h2>
+            </div>
+            <p class="lead">
+              EWSLT will host shared challenges focusing on benchmarking speech
+              technologies.
+            </p>
+            <p class="text-muted">
+              Details about datasets and evaluation protocols will be released
+              soon. Participants are encouraged to form cross-institutional
+              teams to tackle these benchmarks.
+            </p>
+          </div>
+          <div class="col-lg-5 offset-lg-1 d-flex align-items-center">
+            <div class="card border-0 shadow-sm w-100">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold mb-3">
+                  <i class="bi bi-trophy text-warning me-2"></i> Challenge
+                  Tracks
+                </h5>
+                <ul class="list-unstyled task-list mb-0">
+                  <li>ASR Evaluation Challenge</li>
+                  <li>TTS Naturalness and Prosody Evaluation</li>
+                  <li>Speech Translation Benchmark</li>
+                  <li>Speech-LLM Evaluation Challenge</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizers" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="section-title">
+              <h2>Organizers</h2>
+            </div>
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center mb-2">
+                <i class="bi bi-building me-3 fs-4 text-secondary"></i>
+                <span class="fs-5"
+                  >Language Technologies Research Center (LTRC), <br /><strong
+                    >IIIT Hyderabad</strong
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="section-title">
+              <h2>Program Committee</h2>
+            </div>
+            <p class="fs-5 text-muted fst-italic">Committee members TBA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-light-gray">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+          <div class="col-lg-6">
+            <div class="section-title text-center">
+              <h2>Contact</h2>
+            </div>
+            <p class="mb-4">
+              For all inquiries regarding submissions, shared tasks, or
+              sponsorships for EWSLT 2026, please reach out to the organizing
+              committee.
+            </p>
+
+            <a
+              href="mailto:ewslt@iiit.ac.in"
+              class="btn btn-outline-dark btn-lg px-5 rounded-pill shadow-sm"
+            >
+              <i class="bi bi-envelope-fill me-2"></i> ewslt@iiit.ac.in
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p class="mb-0">
+          &copy; 2026 Evaluation Workshop on Speech and Language Technologies
+          (EWSLT).
+        </p>
+        <p class="small text-white-50 mt-1">
+          Language Technologies Research Center (LTRC) | IIIT Hyderabad
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.getElementById("navbar-main");
+        const navCollapse = document.getElementById("nav"); // The collapsible menu
+        let isMenuOpen = false;
+
+        function updateNavbar() {
+          // If scrolled down OR the mobile menu is open, make it solid
+          if (window.scrollY > 50 || isMenuOpen) {
+            navbar.classList.remove("navbar-transparent");
+            navbar.classList.add("navbar-scrolled");
+          } else {
+            // Otherwise, keep it transparent
+            navbar.classList.add("navbar-transparent");
+            navbar.classList.remove("navbar-scrolled");
+          }
+        }
+
+        // Listen for when the mobile menu starts opening
+        navCollapse.addEventListener("show.bs.collapse", function () {
+          isMenuOpen = true;
+          updateNavbar();
+        });
+
+        // Listen for when the mobile menu finishes closing
+        navCollapse.addEventListener("hidden.bs.collapse", function () {
+          isMenuOpen = false;
+          updateNavbar();
+        });
+
+        // Check on load
+        updateNavbar();
+
+        // Check on scroll
+        window.addEventListener("scroll", updateNavbar);
+      });
+    </script>
+  </body>
+</html>
