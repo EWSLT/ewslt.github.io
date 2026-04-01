@@ -290,12 +290,22 @@
             <div class="section-title text-center">
               <h2>Workshop Overview</h2>
             </div>
-            <p class="mb-4">
-                Recent progress in speech and language technologies, increasingly driven by scale, with larger models, larger datasets, and more compute, has lead to impressive performance gains. However, these systems still have massive performance gaps that are glaringly obvious to human users, yet completely invisible to standard evaluation methods. As a result, evaluation has become a checklist exercise that reports incremental improvements on existing benchmarks rather than providing a meaningful assessment of what systems actually understand. This creates a growing gap between technological capability and our ability to measure, interpret, and ground that progress in principled ways.
-                </p>
+
+                  <p class="mb-4">
+                    Despite growing progress in speech and language technologies, evaluation still remains fragmented.
+                    There is no unified platform where ASR, TTS, MT, Speech LLMs, and spoken systems can be evaluated using
+                    standardized benchmarks. Each system is evaluated differently, making comparison and progress tracking difficult.
+                  </p>
+            
+                  <p class="mb-4">
+                    Existing global benchmarks do not reflect linguistic realities such as disfluencies, code-mixing,
+                    morphological richness, dialectal variation, and noisy real-world speech.
+                    As a result, evaluation has become a checklist exercise that reports incremental improvements on existing benchmarks rather than providing a meaningful assessment of what systems actually understand. This creates a growing gap between technological capability and our ability to measure, interpret, and ground that progress in principled ways.
+                  </p>
+
                 
                 <p class="mb-4">
-                The EWSLT workshop aims to address this gap by bringing together researchers and practitioners from across the globe working on speech and language technologies onto a common platform to collectively discuss, debate, and develop innovative, effective, interpretable, and linguistically aware evaluation methodologies. This includes new standards, benchmarks, datasets, metrics, and shared challenges that encourage deeper and more reliable ways of understanding progress in speech and language technologies.
+                EWSLT aims to address this gap by bringing together researchers and practitioners from across the globe working on speech and language technologies onto a common platform to collectively discuss, debate, and develop unified, standardized, interpretable, and linguistically grounded evaluation frameworks. This includes new standards, benchmarks, datasets, metrics, and shared challenges that encourage deeper and more reliable ways of understanding progress in speech and language technologies.
                 </p>
                 
                 <p class="mb-4">
@@ -368,8 +378,7 @@
         </div>
 
         <p class="mb-4 text-muted fs-5">
-          We invite submissions describing novel standards, evaluation methods, benchmarks,
-          datasets, and analysis of speech and language technologies.
+          We invite submissions on novel evaluation methodologies, benchmarks, datasets, and analysis of speech and language technologies, with a strong emphasis on moving beyond conventional metrics such as WER, BLEU, and MOS.
           Submissions must follow the ACL formatting guidelines. Accepted papers
           will be presented at the workshop and included in the proceedings.
         </p>
@@ -403,66 +412,246 @@
 
     <section id="tasks" class="section-padding bg-light-gray">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <div class="section-title">
-              <h2>Shared Tasks</h2>
-            </div>
-            <p class="lead">
-              EWSLT will host shared challenges focusing on benchmarking speech
-              technologies.
+    
+        <div class="section-title text-center">
+          <h2>Shared Tasks</h2>
+        </div>
+    
+        <p class="text-center text-muted mb-5 fs-5">
+          EWSLT 2026 introduces benchmark-driven shared tasks to evaluate speech and language technologies in Indian contexts.
+          Each track provides datasets, evaluation protocols, and leaderboards to enable fair and reproducible comparison.
+        </p>
+    
+        <!-- Track Card -->
+        <div class="card border-0 shadow-sm mb-5">
+          <div class="card-body p-5">
+    
+            <!-- Title -->
+            <h3 class="mb-3">
+              <i class="bi bi-trophy text-warning me-2"></i>
+              Track 1: Indic Spoken Question Answering (SQA)
+            </h3>
+    
+            <!-- Description -->
+            <p class="text-muted mb-4">
+              Spoken Question Answering (SQA) focuses on answering natural language questions delivered as audio.
+              Participants build systems that take spoken questions as input and generate answers in the same language.
+              This track introduces benchmark datasets for Indic languages (starting with Telugu) and evaluates systems
+              using an <strong>LLM-as-Judge framework</strong> designed to capture the linguistic richness of Indian languages.
             </p>
-            <p class="text-muted">
-              Details about datasets and evaluation protocols will be released
-              soon. Participants are encouraged to form cross-institutional
-              teams to tackle these benchmarks.
-            </p>
-          </div>
-          <div class="col-lg-5 offset-lg-1 d-flex align-items-center">
-            <div class="card border-0 shadow-sm w-100">
-              <div class="card-body p-4">
-                <h5 class="card-title fw-bold mb-3">
-                  <i class="bi bi-trophy text-warning me-2"></i> Challenge
-                  Tracks
-                </h5>
-                <ul class="list-unstyled task-list mb-0">
-                  <li>ASR Evaluation Challenge</li>
-                  <li>TTS Naturalness and Prosody Evaluation</li>
-                  <li>Speech Translation Benchmark</li>
-                  <li>Speech-LLM Evaluation Challenge</li>
+    
+            <!-- Key Details -->
+            <div class="row mb-4">
+    
+              <div class="col-md-6">
+                <h6 class="fw-bold">Task Setup</h6>
+                <ul>
+                  <li>Input: Spoken question (audio)</li>
+                  <li>Output: Natural language answer</li>
+                  <li>Languages: Telugu (others TBA)</li>
                 </ul>
               </div>
+    
+              <div class="col-md-6">
+                <h6 class="fw-bold">Evaluation</h6>
+                <ul>
+                  <li>LLM-as-Judge evaluation framework</li>
+                  <li>Factual correctness, fluency, completeness</li>
+                  <li>Language appropriateness (code-switch handling)</li>
+                </ul>
+              </div>
+    
             </div>
+    
+            <div class="row">
+              <!-- Participation -->
+            <div class="col-md-6">
+              <h6 class="fw-bold">Participation</h6>
+              <ul>
+                <li>Build SQA systems (end-to-end or cascaded)</li>
+                <li>Submit predictions on held-out test set</li>
+                <li>Submit system description paper (ACL format)</li>
+              </ul>
+            </div>
+
+
+            </div>
+
+            <!-- CTA -->
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <a href="assets/docs/Indic_SQA_Track_Overview.pdf"
+                 target="_blank"
+                 class="btn btn-outline-primary">
+                <i class="bi bi-file-earmark-pdf me-2"></i>
+                Challenge Details (PDF)
+              </a>
+    
+              <span class="text-muted">Dataset & registration details coming soon</span>
+            </div>
+    
           </div>
         </div>
+    
+        <!-- Future Tracks -->
+        <div class="text-center mt-4">
+          <p class="text-muted fs-5 mb-1">
+            Additional tracks on ASR, TTS, Speech Translation, and Speech LLMs
+          </p>
+          <p class="text-muted fst-italic">
+            will be announced soon.
+          </p>
+        </div>
+    
       </div>
     </section>
+    
 
     <section id="organizers" class="section-padding">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="section-title">
-              <h2>Organizers</h2>
+    
+        <div class="section-title text-center">
+          <h2>Organizing Committee</h2>
+        </div>
+    
+        <!-- Program Chairs -->
+        <div class="mb-5">
+          <h4 class="text-center mb-4">Program Chairs</h4>
+          <div class="row justify-content-center">
+    
+            <div class="col-md-4 text-center mb-4">
+              <img src="assets/img/anil.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Anil Kumar Vuppala</a></h6>
+              <small class="text-muted">Program Chair</small>
             </div>
-            <ul class="list-unstyled">
-              <li class="d-flex align-items-center mb-2">
-                <i class="bi bi-building me-3 fs-4 text-secondary"></i>
-                <span class="fs-5"
-                  >Language Technologies Research Center (LTRC), <br /><strong
-                    >IIIT Hyderabad</strong
-                  ></span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <div class="section-title">
-              <h2>Program Committee</h2>
+    
+            <div class="col-md-4 text-center mb-4">
+              <img src="assets/img/radhika.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Radhika Mamidi</a></h6>
+              <small class="text-muted">Program Chair</small>
             </div>
-            <p class="fs-5 text-muted fst-italic">Committee members TBA.</p>
+    
           </div>
         </div>
+    
+        <!-- Organizing Chairs -->
+        <div class="mb-5">
+          <h4 class="text-center mb-4">Organizing Chairs</h4>
+          <div class="row">
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/param.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Parameswari Krishnamurthy</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/manish.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Manish Shrivastava</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/dipti.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Dipti Misra Sharma</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/chiranjeevi.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Chiranjeevi Yarra</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/rajakrishnan.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Rajakrishnan P Rajkumar</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <!-- Placeholder ones -->
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Santosh Kesiraju</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Bhavana Akkiraju</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Prakash Yalla</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/arafat.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Arafat Ahsan</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Ravi Sastry Kolluru</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Sri Charan Devarakonda</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Radhe Shyam Salopanthula</a></h6>
+              <small class="text-muted">Organizing Chair</small>
+            </div>
+    
+          </div>
+        </div>
+    
+        <!-- Advisory Committee -->
+        <div class="mb-5">
+          <h4 class="text-center mb-4">Advisory Committee</h4>
+          <div class="row justify-content-center">
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="assets/img/vasudeva_varma.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Vasudeva Varma</a></h6>
+              <small class="text-muted">Advisory Committee</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Bayya Yegnanarayana</a></h6>
+              <small class="text-muted">Advisory Committee</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">K. Sreenivasa Rao</a></h6>
+              <small class="text-muted">Advisory Committee</small>
+            </div>
+    
+            <div class="col-md-3 text-center mb-4">
+              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
+              <h6><a href="#" class="text-dark text-decoration-none">Sri Rama Murty K</a></h6>
+              <small class="text-muted">Advisory Committee</small>
+            </div>
+    
+          </div>
+        </div>
+    
+        <!-- Program Committee -->
+        <div class="text-center mt-5">
+          <h4>Program Committee</h4>
+          <p class="text-muted fst-italic">To be announced.</p>
+        </div>
+    
       </div>
     </section>
 
