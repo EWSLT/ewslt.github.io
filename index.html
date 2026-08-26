@@ -263,6 +263,55 @@
         color: #e0e0e0;
         margin: .5rem 0;
       }
+
+      /* --- Tagline --- */
+      .tagline {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: #0c2340;
+        border-left: 4px solid #f8c104;
+        padding-left: 18px;
+        margin-bottom: 30px;
+      }
+
+      /* --- People Cards (Organizers / Advisory) --- */
+      .person-card img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 3px solid #f8c104;
+      }
+
+      /* --- PC list (no images) --- */
+      .pc-list {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        column-gap: 40px;
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .pc-list li {
+        break-inside: avoid;
+        padding: 8px 0;
+        border-bottom: 1px solid #e9ecef;
+        margin-bottom: 4px;
+      }
+
+      .pc-list li .pc-affil {
+        color: #6c757d;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 767px) {
+        .pc-list {
+          columns: 1;
+          -webkit-columns: 1;
+          -moz-columns: 1;
+        }
+      }
     </style>
   </head>
 
@@ -298,6 +347,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#dates">Important Dates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#program">Program</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#cfp">Call for Papers</a>
@@ -341,45 +393,41 @@
               <h2>Workshop Overview</h2>
             </div>
 
-            <p class="mb-4">
-              Despite rapid progress in speech and language technologies, evaluation remains fundamentally fragmented.
-              There is no unified framework where automatic speech recognition (ASR), text-to-speech (TTS),
-              machine translation (MT), natural language generation, large language models (LLMs),
-              and speech-to-speech systems can be evaluated in a consistent and comparable manner.
-              Each domain relies on its own metrics and benchmarks, making it difficult to measure progress holistically
-              or understand how improvements generalize across modalities.
+            <p class="tagline">
+              Beyond Proxy Metrics: Rethinking Evaluation for Speech and Language Technologies
             </p>
-            
+
             <p class="mb-4">
-              Existing benchmarks often fail to capture real-world linguistic and communicative phenomena such as disfluencies,
-              code-mixing, morphological richness, dialectal variation, pragmatics, and noisy or spontaneous inputs.
-              In both speech and text systems, evaluation has increasingly become a narrow optimization over proxy metrics
-              (e.g., WER, BLEU, ROUGE), rather than a meaningful assessment of understanding, generation quality, or interaction.
-              This has led to a widening gap between system capabilities and our ability to reliably measure,
-              interpret, and meaningfully ground their behavior.
+              Speech and Language Technologies have come a long way, but that progress hasn't come evenly.
+              English and a few well-resourced languages enjoy massive datasets, mature tokenization,
+              models scaled to hundreds of billions of parameters, and decades-refined benchmarks.
+              Most of the world's languages, including most Indian languages, get sparse data that is
+              rarely and barely representative of real-world nuances resulting in undertrained models,
+              and little to no dedicated evaluation infrastructure of their own. Existing benchmarks,
+              where they exist, also fail to capture rich linguistic phenomena such as disfluencies,
+              code-mixing, morphological richness, dialectal variation, pragmatics, and noisy or
+              spontaneous input, narrowing evaluation into optimization over proxy metrics
+              (e.g., WER, BLEU, ROUGE) rather than a meaningful assessment of understanding,
+              generation quality, or interaction.
             </p>
-            
+
             <p class="mb-4">
-              SLT-Eval aims to address this gap by bringing together researchers and practitioners working across speech and textual NLP
-              onto a common platform to rethink <strong>Evaluation as a First-Class Research Problem for Indian Languages</strong>.
-              The workshop focuses on developing unified, standardized, interpretable, and linguistically grounded evaluation frameworks
-              that span modalities. This includes new benchmarks, datasets, metrics, and evaluation methodologies for evaluating
-              speech systems, text-based models, and multimodal architectures in a coherent and principled manner.
+              SLT-Eval aims to bridge this exact gap, starting with Indian languages, whose sheer
+              diversity in syntax, morphology, origin, script, and grammar makes them an ideal
+              testbed for evaluation frameworks built to extend well beyond. The workshop is
+              organized by the Language Technologies Research Centre (LTRC), IIIT Hyderabad, as
+              part of LTRC's &ldquo;Global Standard for Indic AI&rdquo; initiative, and unites researchers
+              across ASR, MT, TTS, Speech Translation, LLMs, and multimodal systems to build
+              standardized, interpretable evaluation methodologies, benchmarks, datasets, and
+              metrics, alongside dedicated shared tasks.
             </p>
-            
-            <p class="mb-4">
-              The workshop will include invited talks, paper presentations, panel discussions, and shared evaluation challenges
-              aimed at addressing fundamental bottlenecks in evaluating modern AI systems, including robustness, generalization,
-              faithfulness, and alignment across speech and language technologies.
-            </p>
-                <div class="text-center mt-4">
-                  <a href="assets/docs/EWSLT-2026.pdf"
-                     target="_blank"
-                     class="btn btn-outline-primary px-4 py-2">
-                    <i class="bi bi-file-earmark-pdf me-2"></i>
-                    Know More
-                  </a>
-                </div>
+
+            <h5 class="mb-3" style="color:#0c2340;">SLT-Eval's key research questions are:</h5>
+            <ul class="topic-list list-unstyled mb-4">
+              <li>How can evaluation move beyond proxy metrics toward meaningful linguistic, perceptual, and real-world quality?</li>
+              <li>How can evaluation generalize across languages, dialects, domains, and resource conditions?</li>
+              <li>How can automatic metrics be validated against human judgments while accounting for robustness, fairness, and linguistic diversity?</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -393,32 +441,70 @@
               <h2>Important Dates</h2>
             </div>
 
+            <p class="text-center text-muted mb-4">
+              SLT-Eval 2027 is being proposed to the ACL 2027 (Kyoto, Japan) joint workshop track.
+              The dates below are tentative following the joint ACL-family Call for Workshop Proposals 2027 timeline
+              for ACL 2027; Final dates will be confirmed once the workshop proposal is accepted.
+            </p>
+
             <div class="card border-0 shadow-sm">
               <div class="card-body p-0">
                 <table class="table table-hover mb-0 date-table">
                   <tbody>
                     <tr>
                       <th class="py-3 px-4 border-bottom-0">
-                        Paper submission deadline
+                        First call for workshop papers
                       </th>
                       <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
-                        TBA
+                        December 6, 2026
                       </td>
                     </tr>
                     <tr>
                       <th class="py-3 px-4 border-bottom-0">
-                        Notification of acceptance
+                        Second call for workshop papers
                       </th>
                       <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
-                        TBA
+                        January 17, 2027
                       </td>
                     </tr>
                     <tr>
                       <th class="py-3 px-4 border-bottom-0">
-                        Camera-ready submission
+                        Direct paper submission deadline
                       </th>
                       <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
-                        TBA
+                        April 25, 2027
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Pre-reviewed ARR commitment deadline
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        April 2027
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Paper notification of acceptance
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        May 22, 2027
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Camera-ready paper due
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        June 12, 2027
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="py-3 px-4 border-bottom-0">
+                        Proceedings due (hard deadline)
+                      </th>
+                      <td class="py-3 px-4 border-bottom-0 text-end fw-bold">
+                        July 3, 2027
                       </td>
                     </tr>
                     <tr class="table-primary">
@@ -428,7 +514,7 @@
                       <td
                         class="py-3 px-4 border-bottom-0 text-end fw-bold text-dark"
                       >
-                        2027
+                        August 21&ndash;22, 2027
                       </td>
                     </tr>
                   </tbody>
@@ -440,16 +526,72 @@
       </div>
     </section>
 
-    <section id="cfp" class="section-padding">
+    <section id="program" class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="section-title text-center">
+              <h2>Keynote &amp; Program Details</h2>
+            </div>
+
+            <p class="text-center text-muted mb-4">
+              SLT-Eval 2027 is a 1-day, hybrid workshop with live-streaming and recording for remote
+              participation. A detailed schedule with timings will be published closer to the workshop date.
+            </p>
+
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-0">
+                <table class="table table-hover mb-0 align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th class="py-3 px-4">Session</th>
+                      <th class="py-3 px-4">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-3 px-4 fw-bold">Welcome Session</td>
+                      <td class="py-3 px-4">Opening remarks from the organizing team.</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-bold">Keynote</td>
+                      <td class="py-3 px-4">
+                        &ldquo;Evaluation Beyond Proxy Metrics&rdquo; &mdash; Jan &ldquo;Honza&rdquo; &Ccaron;ernock&yacute;,
+                        Head of Department, Brno University of Technology
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-bold">CFP Best Paper Presentations</td>
+                      <td class="py-3 px-4">Presentations of the best main-track submissions.</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-bold">Shared Task Session</td>
+                      <td class="py-3 px-4">Result presentations from Track 1 (Indic SQA) and Track 2 (Indic S2S Evaluation Metric) participants.</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-bold">Closing</td>
+                      <td class="py-3 px-4">Closing remarks and wrap-up.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cfp" class="section-padding bg-light-gray">
       <div class="container">
         <div class="section-title">
           <h2>Call for Papers</h2>
         </div>
 
         <p class="mb-4 text-muted fs-5">
-          We invite submissions on novel evaluation methodologies, benchmarks, datasets, and analysis of speech and language technologies, with a strong emphasis on moving beyond conventional metrics such as WER, BLEU, and MOS.
-          Submissions must follow the ACL formatting guidelines. Accepted papers
-          will be presented at the workshop and included in the proceedings.
+          We invite original research papers, position papers, and system demonstrations addressing
+          evaluation challenges across speech and language technologies, moving beyond conventional
+          metrics such as WER, BLEU, and MOS. Submissions must follow the ACL formatting guidelines.
+          Accepted papers will be presented at the workshop and included in the proceedings.
         </p>
 
         <h4 class="mb-4">
@@ -457,54 +599,25 @@
         </h4>
 
         <div class="row">
-          <!-- NEW ROW: TEXTUAL NLP + CROSS-MODAL -->
-        <div class="col-md-6 mt-4">
-          <ul class="list-unstyled topic-list">
-            <li>Evaluation of Machine Translation (MT)</li>
-            <li>Evaluation of Natural Language Generation (NLG)</li>
-            <li>Evaluation of Large Language Models (LLMs)</li>
-            <li>Semantic similarity and textual entailment evaluation</li>
-            <li>Evaluation of Question Answering (QA) systems</li>
-            <li>Summarization evaluation (faithfulness, factuality, coherence)</li>
-          </ul>
-          </div>
-          
-          <div class="col-md-6 mt-4">
-          <ul class="list-unstyled topic-list">
-            <li>Evaluation of dialogue and conversational systems</li>
-            <li>Cross-lingual and code-mixed evaluation</li>
-            <li>Grounded language and multimodal evaluation (speech–text–vision)</li>
-            <li>Hallucination detection and factual consistency</li>
-            <li>Interpretability and explainability in NLP systems</li>
-            <li>Benchmarking and dataset design for evaluation</li>
-          </ul>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-6">
             <ul class="list-unstyled topic-list">
-              <li>Evaluation of Automatic Speech Recognition (ASR)</li>
-              <li>Evaluation of Text-to-Speech (TTS)</li>
-              <li>Speech Translation evaluation</li>
-              <li>Evaluation of Speech-to-Speech systems</li>
-              <li>Speech LLM evaluation</li>
-              <li>Spoken Language Cognition</li>
+              <li>Evaluation methodologies for MT, NLG, LLMs, and multimodal systems</li>
+              <li>Evaluation of ASR, TTS, speech translation, and Speech LLMs</li>
+              <li>Benchmark and dataset design for low-resource and multilingual evaluation</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="list-unstyled topic-list">
-              <li>Evaluation metrics beyond WER</li>
-              <li>Human vs automatic evaluation methods</li>
-              <li>Low-resource and multilingual evaluation</li>
-              <li>Evaluation of expressive and prosodic speech</li>
-              <li>Bias and robustness in speech systems</li>
+              <li>Human vs. automatic evaluation methods</li>
+              <li>Cross-lingual and code-mixed evaluation</li>
+              <li>Bias, robustness, and interpretability in speech and NLP systems</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="tasks" class="section-padding bg-light-gray">
+    <section id="tasks" class="section-padding">
       <div class="container">
     
         <div class="section-title text-center">
@@ -677,163 +790,130 @@
     </section>
     
 
-    <section id="organizers" class="section-padding">
+    <section id="organizers" class="section-padding bg-light-gray">
+      <div class="container">
 
-    
-      <div class="container section-title text-center">
-        <h2>Organizing Committee</h2>
-        <p class="text-muted fst-italic">To be announced.</p>
-
-      </div>
-      <div class="container d-none">
-    
         <div class="section-title text-center">
           <h2>Organizing Committee</h2>
         </div>
-    
-        <!-- Program Chairs -->
+
+        <!-- Workshop Organizers -->
         <div class="mb-5">
-          <h4 class="text-center mb-4">Program Chairs</h4>
+          <h4 class="text-center mb-4">Workshop Organizers</h4>
           <div class="row justify-content-center">
-    
-            <div class="col-md-4 text-center mb-4">
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
               <img src="assets/img/anil.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Anil Kumar Vuppala</a></h6>
-              <small class="text-muted">Program Chair</small>
+              <h6 class="mb-0">Anil Kumar Vuppala</h6>
+              <small class="text-muted">LTRC, IIIT Hyderabad</small>
             </div>
-    
-            <div class="col-md-4 text-center mb-4">
-              <img src="assets/img/radhika.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Radhika Mamidi</a></h6>
-              <small class="text-muted">Program Chair</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/mathew.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Mathew Magimai Doss</h6>
+              <small class="text-muted">Idiap Research Institute</small>
             </div>
-    
-          </div>
-        </div>
-    
-        <!-- Organizing Chairs -->
-        <div class="mb-5">
-          <h4 class="text-center mb-4">Organizing Chairs</h4>
-          <div class="row">
-    
-            <div class="col-md-3 text-center mb-4">
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/mikko.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Mikko Kurimo</h6>
+              <small class="text-muted">Aalto University</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
               <img src="assets/img/param.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Parameswari Krishnamurthy</a></h6>
-              <small class="text-muted">Organizing Chair</small>
+              <h6 class="mb-0">Parameswari Krishnamurthy</h6>
+              <small class="text-muted">LTRC, IIIT Hyderabad</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/manish.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Manish Shrivastava</a></h6>
-              <small class="text-muted">Organizing Chair</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/radhika.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Radhika Mamidi</h6>
+              <small class="text-muted">LTRC, IIIT Hyderabad</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/dipti.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Dipti Misra Sharma</a></h6>
-              <small class="text-muted">Organizing Chair</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/santosh.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Santosh Kesiraju</h6>
+              <small class="text-muted">BUT Speech@FIT, Brno University of Technology</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/chiranjeevi.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Chiranjeevi Yarra</a></h6>
-              <small class="text-muted">Organizing Chair</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/soumya.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Soumya Vajjala</h6>
+              <small class="text-muted">National Research Council, Canada</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/rajakrishnan.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Rajakrishnan P Rajkumar</a></h6>
-              <small class="text-muted">Organizing Chair</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/vasudeva_varma.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Vasudeva Varma</h6>
+              <small class="text-muted">LTRC, IIIT Hyderabad</small>
             </div>
-    
-            <!-- Placeholder ones -->
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Santosh Kesiraju</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Bhavana Akkiraju</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Prakash Yalla</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/arafat.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Arafat Ahsan</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Ravi Sastry Kolluru</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Sri Charan Devarakonda</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Radhe Shyam Salopanthula</a></h6>
-              <small class="text-muted">Organizing Chair</small>
-            </div>
-    
+
           </div>
         </div>
-    
+
         <!-- Advisory Committee -->
         <div class="mb-5">
           <h4 class="text-center mb-4">Advisory Committee</h4>
           <div class="row justify-content-center">
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="assets/img/vasudeva_varma.png" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Vasudeva Varma</a></h6>
-              <small class="text-muted">Advisory Committee</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/rajeev.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Rajeev Sangal</h6>
+              <small class="text-muted">Professor Emeritus, IIIT Hyderabad; Founder, LTRC</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Bayya Yegnanarayana</a></h6>
-              <small class="text-muted">Advisory Committee</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/dipti.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Dipti Misra Sharma</h6>
+              <small class="text-muted">Professor Emeritus, IIIT Hyderabad; Head, LTRC</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">K. Sreenivasa Rao</a></h6>
-              <small class="text-muted">Advisory Committee</small>
+
+            <div class="col-md-3 col-sm-6 text-center mb-4 person-card">
+              <img src="assets/img/bayya.png" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="mb-0">Bayya Yegnanarayana</h6>
+              <small class="text-muted">INSA Senior Scientist, IIIT Hyderabad</small>
             </div>
-    
-            <div class="col-md-3 text-center mb-4">
-              <img src="https://via.placeholder.com/120" class="rounded-circle mb-2" width="120" height="120">
-              <h6><a href="#" class="text-dark text-decoration-none">Sri Rama Murty K</a></h6>
-              <small class="text-muted">Advisory Committee</small>
-            </div>
-    
+
           </div>
         </div>
-    
+
         <!-- Program Committee -->
-        <div class="text-center mt-5">
-          <h4>Program Committee</h4>
-          <p class="text-muted fst-italic">To be announced.</p>
+        <div>
+          <h4 class="text-center mb-4">Program Committee</h4>
+          <ul class="pc-list">
+            <li>Achut Rao MV <span class="pc-affil">&mdash; Qualcomm, India</span></li>
+            <li>Ajay Srinivasamurthy <span class="pc-affil">&mdash; Amazon Artificial General Intelligence</span></li>
+            <li>Anil Nelakanti <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Anoop Kunchukuttan <span class="pc-affil">&mdash; Bodhan AI</span></li>
+            <li>Arafat Ahsan <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Aravind Illa <span class="pc-affil">&mdash; Oracle, India</span></li>
+            <li>Chiranjeevi Yarra <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Hemant A. Patil <span class="pc-affil">&mdash; DA-IICT</span></li>
+            <li>Hrishikesh Terdalkar <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Kishore Papineni <span class="pc-affil">&mdash; Google</span></li>
+            <li>Krishna Gurugubelli <span class="pc-affil">&mdash; Samsung Research</span></li>
+            <li>Manish Gupta <span class="pc-affil">&mdash; Microsoft, India</span></li>
+            <li>Manish Shrivastava <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Nitika Mathur <span class="pc-affil">&mdash; Oracle (formerly Univ. Melbourne)</span></li>
+            <li>Ond&#345;ej Bojar <span class="pc-affil">&mdash; Charles University</span></li>
+            <li>Preeti Rao <span class="pc-affil">&mdash; IIT Bombay</span></li>
+            <li>Rajakrishnan P Rajkumar <span class="pc-affil">&mdash; IIIT Hyderabad</span></li>
+            <li>Ranjani H G <span class="pc-affil">&mdash; Ericsson</span></li>
+            <li>Ravi Shekhar <span class="pc-affil">&mdash; University of Essex</span></li>
+            <li>Sandipan Dandapat <span class="pc-affil">&mdash; IIT Hyderabad</span></li>
+            <li>Sivaji Bandyopadhyay <span class="pc-affil">&mdash; Jadavpur University</span></li>
+            <li>Sriram Ganapathy <span class="pc-affil">&mdash; IISc Bangalore (LEAP)</span></li>
+            <li>Sunayana Sitaram <span class="pc-affil">&mdash; Microsoft Research India</span></li>
+            <li>Vipul Arora <span class="pc-affil">&mdash; KU Leuven</span></li>
+          </ul>
         </div>
-    
+
       </div>
     </section>
 
-    <section id="contact" class="section-padding bg-light-gray">
+    <section id="contact" class="section-padding">
       <div class="container">
         <div class="row text-center justify-content-center">
           <div class="col-lg-6">
